@@ -1,0 +1,25 @@
+name: draw diagram
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Convert test file to png image
+      uses: Burnett01/actions-drawio@1.2
+      with:
+        src: main.drawio
+        dest: main.png
+    - name: Upload image as artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: png
+        path: ./docs/main.png
