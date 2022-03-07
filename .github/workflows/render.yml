@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Convert test file to png image
+    - name: Convert diagram file to png image
       uses: Burnett01/actions-drawio@1.2
       with:
         src: main.drawio
@@ -22,4 +22,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: png
-        path: ./.docs/main.png
+        path: .docs/main.png
