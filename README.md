@@ -1,2 +1,2 @@
-# architecture
-![.docs/main.png]()
+# Main architecture
+- Use draw.io to edit
